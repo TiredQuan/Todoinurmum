@@ -1,0 +1,8 @@
+//px to em by csstricks https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function em($pixels, $context: 16) {
+    @return #{$pixels/$context}em;
+  }
+//px to rem by Jessica Chan https://www.youtube.com/watch?v=dHbYcAncAgQ
+@function rem($pixels, $context: 16){
+    @return #{$pixels/$context}rem;
+}
