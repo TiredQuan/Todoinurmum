@@ -1,0 +1,16 @@
+@import "../../scss/global-imports";
+
+header {
+  background-color: #ba92f9;
+  height: em(100);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: em(40) em(20);
+  div {
+    width: em(20);
+    h1 {
+      font-size: em(24);
+    }
+  }
+}
