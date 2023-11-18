@@ -1,0 +1,28 @@
+@import "../../scss/global-imports";
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  margin: em(20) 0;
+  padding: em(20) 0;
+  background-color: gray;
+  color: white;
+  & > form {
+    & > #todo,
+    button {
+      height: em(50);
+      border-radius: em(15);
+      border: none;
+      margin: 0 em(10);
+    }
+    & > #todo {
+      width: em(300);
+      padding: 0 em(20);
+    }
+    & > button {
+      width: em(75);
+    }
+  }
+}

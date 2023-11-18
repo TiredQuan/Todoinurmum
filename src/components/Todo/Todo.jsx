@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./todo.scss";
 
 const Todo = () => {
   const [todoCounter, setTodoCounter] = useState(0);
@@ -10,7 +11,6 @@ const Todo = () => {
     const addToList = { id: todoCounter, todo: todoInput, done: false };
     setTodoCounter(todoCounter + 1);
     setTodoArray([...todoArray, addToList]);
-    console.log(todoArray);
   };
 
   return (
@@ -21,6 +21,7 @@ const Todo = () => {
           name="todo"
           id="todo"
           value={todoInput}
+          placeholder="Todo"
           onChange={(e) => {
             setTodoInput(e.target.value);
           }}
