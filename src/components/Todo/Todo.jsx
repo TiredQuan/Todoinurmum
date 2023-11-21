@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TodoComponent from "./TodoComponent";
 import "./todo.scss";
 
 const Todo = () => {
@@ -13,6 +14,16 @@ const Todo = () => {
     setTodoArray([...todoArray, addToList]);
   };
 
+  const onDelete = (id) => {
+    const updatedArray = todoArray.filter((i) => id !== i.id);
+    setTodoArray(updatedArray);
+  };
+  const onDone = (id) => {
+    const newArray = todoArray.map((item) =>
+      item.id === id ? { ...item, done: !item.done } : item
+    );
+    setTodoArray(newArray);
+  };
   return (
     <main>
       <form action="">
@@ -30,17 +41,23 @@ const Todo = () => {
           Add
         </button>
       </form>
-      {todoArray.map((item) => {
-        return (
-          <div key={item.id}>
-            <p>{item.id}:</p>
-            <p>{item.todo}</p>
-            <p>{item.done ? "Done" : "Undone"}</p>
-          </div>
-        );
-      })}
+      <section>
+        {todoArray.map((item) => {
+          return (
+            <TodoComponent
+              key={item.id}
+              id={item.id}
+              done={item.done}
+              todo={item.todo}
+              onDelete={() => onDelete(item.id)}
+              onDone={() => onDone(item.id)}
+            />
+          );
+        })}
+      </section>
     </main>
   );
 };
+
 export default Todo;
 //always remember to reactify your code

@@ -5,17 +5,24 @@ main {
   align-items: center;
   flex-direction: column;
   text-align: left;
-  margin: em(20) 0;
-  padding: em(20) 0;
   background-color: gray;
   color: white;
+  min-height: em(700);
+  margin: em(20) 0;
+  padding: em(20) 0;
+  & > section,
   & > form {
+    width: em(400);
+  }
+  & > form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     & > #todo,
     button {
       height: em(50);
       border-radius: em(15);
       border: none;
-      margin: 0 em(10);
     }
     & > #todo {
       width: em(300);
@@ -23,6 +30,27 @@ main {
     }
     & > button {
       width: em(75);
+    }
+  }
+  & > section {
+    margin: em(20) 0;
+    & > div {
+      padding: em(5) em(20);
+      border: em(1) solid white;
+      border-radius: em(15);
+      margin-bottom: em(25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      & > .left {
+        & > div {
+          display: flex;
+        }
+      }
+      & > .right {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }
